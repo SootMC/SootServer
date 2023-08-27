@@ -400,14 +400,14 @@ index 0000000000000000000000000000000000000000..9720a6387018b2f50e027c557e858b46
 +    // SootMC End
 +}
 diff --git a/src/main/java/org/spigotmc/WatchdogThread.java b/src/main/java/org/spigotmc/WatchdogThread.java
-index 0801dea155048ac5383295f4fef9bd597b678535..aa27e85a95780364a36f2513e6b39c06f054019b 100644
+index 0801dea155048ac5383295f4fef9bd597b678535..bd2ba61496a0cd4325423dc321c79b012f305187 100644
 --- a/src/main/java/org/spigotmc/WatchdogThread.java
 +++ b/src/main/java/org/spigotmc/WatchdogThread.java
 @@ -230,6 +230,7 @@ public final class WatchdogThread extends io.papermc.paper.util.TickThread // Pa
                          e.printStackTrace();
                      }
                      if (!server.hasStopped()) {
-+                        new net.minecraft.CrashDiscordWebhook("https://discord.com/api/webhooks/1145459778554961991/UQzhdCCtwHKoNY58T3Es6EsDx2OjpKhUQyptJoeHfzwwB4H42I4UgssC6FAALUUHToy6").compileAndSend("Server has not responded for " + (currentTime - lastTick) / 1000 + " seconds! Creating thread dump", "Server has crashed and is shutting down!", "Test 1");
++                        new net.minecraft.CrashDiscordWebhook("https://discord.com/api/webhooks/1145459778554961991/UQzhdCCtwHKoNY58T3Es6EsDx2OjpKhUQyptJoeHfzwwB4H42I4UgssC6FAALUUHToy6").compileAndSend("Server has not responded for " + (currentTime - lastTick) / 1000 + " seconds! Creating thread dump", "Server has crashed and is shutting down!", "Test 1"); // SootMC
                          server.close();
                      }
                  }
